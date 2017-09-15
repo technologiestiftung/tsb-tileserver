@@ -1,0 +1,7 @@
+{
+  "origins":["localhost"],
+  "sources":[
+    {"name": "vector_berlin", "source": "", "type":"vector", "url":"/path/to.mbtiles"},
+    {"name": "raster_berlin", "source": "", "type":"raster", "url":"/path/to.mbtiles"}
+  ]
+}
