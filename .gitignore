@@ -3,3 +3,4 @@ config.json
 tiles/*
 glyphs/*
 sprites/*
+.DS_STORE
