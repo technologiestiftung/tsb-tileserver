@@ -4,6 +4,7 @@ var config = require('./config.json'),
   express = require('express'),
   http = require('http'),
   app = express(),
+  compression = require('compression'),
   tilelive = require('tilelive')
 
 require('mbtiles').registerProtocols(tilelive)
@@ -35,7 +36,9 @@ function loadTiles(){
 loadTiles()
 
 function startServer(){
-  app.set('port', 10060);
+  app.set('port', 10061);
+
+  app.use(compression())
 
   app.use((req, res, next) => {
     var origins = config.origins
@@ -57,12 +60,16 @@ function startServer(){
       res.header("Access-Control-Allow-Origin", "*")
     }
 
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+	res.header('Access-Control-Allow-Credentials', 'true');
+  	res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+	res.header('Access-Control-Expose-Headers', 'Content-Length');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
     next()
   })
 
-  app.use('/glyphs', express.static('glyphs'))
-  app.use('/sprites', express.static('sprites'))
+  app.use('/glyphs', express.static(__dirname+'/glyphs'))
+  app.use('/sprites', express.static(__dirname+'/sprites'))
 
   app.get(/^\/tiles\/(.*)\/(\d+)\/(\d+)\/(\d+).pbf$/, (req, res) => {
     deliverTile(req, res, 'vector')
@@ -72,9 +79,14 @@ function startServer(){
     deliverTile(req, res, 'raster')
   });
 
-  http.createServer(app).listen(app.get('port'), function() {
+  var server = http.createServer(app).listen(app.get('port'), function() {
       console.log('Express server listening on port ' + app.get('port'));
   });
+
+  server.on('connection', function(socket) {
+	server.setTimeout(240000);
+  })
+
 }
 
 function deliverTile(req, res, type){
