@@ -1,5 +1,7 @@
 # tsb-tileserver
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/technologiestiftung/tsb-tileserver.svg)](https://greenkeeper.io/)
+
 This is a simple self-hosted tile server implementation to work with the mapbox-gl-js frontend library. While this repo contains the structure and code to run the server, it does not contain the actual tiles you need to deliver data to the frontend. See below.
 
 ## Setup
