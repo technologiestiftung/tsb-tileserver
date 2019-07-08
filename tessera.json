@@ -1,0 +1,51 @@
+{
+  "/dotmap-berlin": {
+    "source": "mbtiles:///home/tsb/projects/tiles/tiles/DotMapBerlin.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age={{#tileJSON}}86400{{/tileJSON}}{{#tile}}3600{{/tile}}",
+      "Surrogate-Control": "max-age=86400",
+      "Surrogate-Keys": "{{#tile}}z{{zoom}} x{{x}} y{{y}}{{/tile}}"
+    },
+	"404":"HTTP 204"
+  },
+  "/dotmap-berlin-highres": {
+    "source": "mbtiles:///home/tsb/projects/tiles/tiles/DotMapBerlin-highres.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age={{#tileJSON}}86400{{/tileJSON}}{{#tile}}3600{{/tile}}",
+      "Surrogate-Control": "max-age=86400",
+      "Surrogate-Keys": "{{#tile}}z{{zoom}} x{{x}} y{{y}}{{/tile}}"
+    }
+  },
+  "/dotmap-hamburg": {
+    "source": "mbtiles:///home/tsb/projects/tiles/tiles/DotMapHamburg.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age={{#tileJSON}}86400{{/tileJSON}}{{#tile}}3600{{/tile}}",
+      "Surrogate-Control": "max-age=86400",
+      "Surrogate-Keys": "{{#tile}}z{{zoom}} x{{x}} y{{y}}{{/tile}}"
+    }
+  },
+  "/dotmap-hamburg-highres": {
+    "source": "mbtiles:///home/tsb/projects/tiles/tiles/DotMapHamburg-highres.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age={{#tileJSON}}86400{{/tileJSON}}{{#tile}}3600{{/tile}}",
+      "Surrogate-Control": "max-age=86400",
+      "Surrogate-Keys": "{{#tile}}z{{zoom}} x{{x}} y{{y}}{{/tile}}"
+    }
+  },
+  "/berlin": {
+    "source": "mbtiles:///home/tsb/projects/tiles/tiles/2017-07-03_germany_berlin.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age={{#tileJSON}}86400{{/tileJSON}}{{#tile}}3600{{/tile}}",
+      "Surrogate-Control": "max-age=86400",
+      "Surrogate-Keys": "{{#tile}}z{{zoom}} x{{x}} y{{y}}{{/tile}}"
+    }
+  },
+  "/berlin20": {
+    "source": "mbtiles:///home/tsb/projects/tiles/tiles/berlin-0-20.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age={{#tileJSON}}86400{{/tileJSON}}{{#tile}}3600{{/tile}}",
+      "Surrogate-Control": "max-age=86400",
+      "Surrogate-Keys": "{{#tile}}z{{zoom}} x{{x}} y{{y}}{{/tile}}"
+    }
+  }
+}

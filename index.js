@@ -62,7 +62,7 @@ function startServer(){
 
 	res.header('Access-Control-Allow-Credentials', 'true');
   	res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-	res.header('Access-Control-Expose-Headers', 'Content-Length');
+	//res.header('Access-Control-Expose-Headers', 'Content-Length');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     next()
@@ -109,7 +109,7 @@ function deliverTile(req, res, type){
 
   sources[source_ref[type]].source.getTile(z, x, y, (err, tile, headers) => {
     if (err) {
-      res.set(headers)
+      //res.set(headers)
       res.send('')
     } else {
       res.set(headers)

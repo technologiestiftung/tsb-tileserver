@@ -1,17 +1,17 @@
 {
   "version": 8,
   "center": [
-    13.320273556711044,
-    52.4976497577654
+    9.3995898159,
+    53.6600839168
   ],
   "sources": {
     "raster-tiles": {
         "type": "raster",
         "tiles": [
-          "https://tsb.ara.uberspace.de/tessera/dotmap-berlin/{z}/{x}/{y}@2x.png"
+          "https://tsb.ara.uberspace.de/tessera/dotmap-hamburg/{z}/{x}/{y}@2x.png"
         ],
         "tileSize": 256,
-        "bounds":[13.0977377655219,52.3399598479162,13.7563360227081,52.6601642857034]
+        "bounds":[8.48945715214325,53.3976945788125,10.3097224797324,53.92247325487]
     }
   },
   "layers": [
